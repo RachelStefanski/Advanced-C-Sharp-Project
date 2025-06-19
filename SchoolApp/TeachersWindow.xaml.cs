@@ -11,7 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using BLL;
+using ENTITIS;
 namespace SchoolApp
 {
     /// <summary>
@@ -22,10 +24,15 @@ namespace SchoolApp
         public TeachersWindow()
         {
             DataContext = this;
-            //bl = new bl;
-            //Teachers = bl.GetTeachers();
+            functions bl = new functions();
+            Teachers = bl.LoadTeachersDetails();
             InitializeComponent();
         }
-        //public List<Teacher> Teachers { get; set; }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        public List<Teachers> Teachers { get; set; }
     }
 }
