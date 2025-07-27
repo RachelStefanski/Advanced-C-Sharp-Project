@@ -6,7 +6,7 @@ namespace DAL
     {
         public SQLiteDataReader ReadFromDbStudents()
         {
-            var conn = new SQLiteConnection(@"Data Source=C:\Users\User.DESKTOP-HT62HRR\Desktop\C#\lesson_9_Sqlite\SchoolApp-master\DAL\School.db");
+            var conn = new SQLiteConnection(@"Data Source=C:\Users\User.DESKTOP-HT62HRR\Desktop\C#\lesson_9_Sqlite\SchoolApp\DAL\School.db");
             conn.Open();
             var command = new SQLiteCommand("SELECT * FROM Students", conn);
             var reader = command.ExecuteReader();
@@ -14,7 +14,7 @@ namespace DAL
         }
         public SQLiteDataReader ReadFromDbTeachers ()
         {
-            var conn = new SQLiteConnection(@"Data Source=C:\Users\User.DESKTOP-HT62HRR\Desktop\C#\lesson_9_Sqlite\SchoolApp-master\DAL\School.db");
+            var conn = new SQLiteConnection(@"Data Source=C:\Users\User.DESKTOP-HT62HRR\Desktop\C#\lesson_9_Sqlite\SchoolApp\DAL\School.db");
             conn.Open();
             var command = new SQLiteCommand("SELECT * FROM Teachers", conn);
             var reader = command.ExecuteReader();
